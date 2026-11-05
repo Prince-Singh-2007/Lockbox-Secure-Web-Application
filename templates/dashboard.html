@@ -1,1 +1,41 @@
-{% extends 'base.html' %}{% block title %}Dashboard{% endblock %}{% block content %}<section class="hero"><small>AUTHENTICATED SESSION</small><h1>Welcome,<br><span>{{username}}.</span></h1><p>This is a protected page. Only logged-in users can access this route.</p><p class="status">● Session active</p><form method="post" action="/logout"><input type="hidden" name="csrf" value="{{session.csrf}}"><button class="btn alt">Log out</button></form></section>{% endblock %}
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+
+    <small>AUTHENTICATED SESSION</small>
+
+    <h1>
+        Welcome,<br>
+        <span>{{ username }}.</span>
+    </h1>
+
+    <p>
+        This is a protected page. Only logged-in users can access this route.
+    </p>
+
+    <p class="status">
+        ● Session active
+    </p>
+
+    <!-- Secure Logout Form -->
+    <form method="post" action="/logout">
+
+        <input
+            type="hidden"
+            name="csrf"
+            value="{{ session.csrf }}"
+        >
+
+        <button class="btn alt" type="submit">
+            Log out
+        </button>
+
+    </form>
+
+</section>
+
+{% endblock %}
