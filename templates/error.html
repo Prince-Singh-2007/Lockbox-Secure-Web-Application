@@ -1,1 +1,21 @@
-{% extends 'base.html' %}{% block title %}Request blocked{% endblock %}{% block content %}<section class="auth"><small>REQUEST BLOCKED</small><h1>Error 400</h1><p>{{message}}</p><a class="btn" href="/">Return home</a></section>{% endblock %}
+{% extends 'base.html' %}
+
+{% block title %}Request Blocked{% endblock %}
+
+{% block content %}
+
+<section class="auth">
+
+    <small>REQUEST BLOCKED</small>
+
+    <h1>Error 400</h1>
+
+    <p>{{ message }}</p>
+
+    <a class="btn" href="/">
+        Return Home
+    </a>
+
+</section>
+
+{% endblock %}
