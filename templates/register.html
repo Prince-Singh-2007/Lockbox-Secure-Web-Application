@@ -1,1 +1,63 @@
-{% extends 'base.html' %}{% block title %}Register{% endblock %}{% block content %}<section class="auth"><small>NEW USER</small><h1>Create your<br><span>secure account.</span></h1><form method="post"><input type="hidden" name="csrf" value="{{session.csrf}}"><label>Username</label><input name="username" minlength="3" maxlength="30" required autocomplete="username"><label>Password</label><input type="password" name="password" required autocomplete="new-password"><p class="hint">At least 10 characters with uppercase, lowercase, number and symbol.</p><button class="btn">Register →</button></form></section>{% endblock %}
+{% extends 'base.html' %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+
+<section class="auth">
+
+    <small>NEW USER</small>
+
+    <h1>
+        Create your<br>
+        <span>secure account.</span>
+    </h1>
+
+    <!-- Registration Form -->
+    <form method="post">
+
+        <!-- CSRF Protection -->
+        <input
+            type="hidden"
+            name="csrf"
+            value="{{ session.csrf }}"
+        >
+
+        <!-- Username Field -->
+        <label>Username</label>
+
+        <input
+            type="text"
+            name="username"
+            minlength="3"
+            maxlength="30"
+            required
+            autocomplete="username"
+        >
+
+        <!-- Password Field -->
+        <label>Password</label>
+
+        <input
+            type="password"
+            name="password"
+            required
+            autocomplete="new-password"
+        >
+
+        <!-- Password Requirements -->
+        <p class="hint">
+            At least 10 characters with uppercase, lowercase,
+            number and symbol.
+        </p>
+
+        <!-- Submit Button -->
+        <button class="btn" type="submit">
+            Register →
+        </button>
+
+    </form>
+
+</section>
+
+{% endblock %}
