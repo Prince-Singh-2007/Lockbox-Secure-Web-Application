@@ -1,1 +1,66 @@
-{% extends 'base.html' %}{% block title %}Home{% endblock %}{% block content %}<section class="hero"><small>SECURITY-FIRST AUTHENTICATION DEMO</small><h1>Your account.<br><span>Your control.</span></h1><p>A student-built secure web application demonstrating password hashing, protected sessions, CSRF protection and safer database queries.</p><a class="btn" href="/register">Create account →</a> <a class="btn alt" href="/login">Sign in</a></section><section class="cards"><article><b>01 / Password security</b><p>Passwords are stored as salted scrypt hashes, never plain text.</p></article><article><b>02 / Safer database</b><p>Parameterized SQL statements help prevent SQL injection.</p></article><article><b>03 / Session protection</b><p>HttpOnly and SameSite cookies, session renewal and CSRF tokens.</p></article></section>{% endblock %}
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero">
+
+    <small>SECURITY-FIRST AUTHENTICATION DEMO</small>
+
+    <h1>
+        Your account.<br>
+        <span>Your control.</span>
+    </h1>
+
+    <p>
+        A student-built secure web application demonstrating password
+        hashing, protected sessions, CSRF protection and safer
+        database queries.
+    </p>
+
+    <!-- Navigation Buttons -->
+    <a class="btn" href="/register">
+        Create account →
+    </a>
+
+    <a class="btn alt" href="/login">
+        Sign in
+    </a>
+
+</section>
+
+<!-- Security Features Section -->
+<section class="cards">
+
+    <article>
+        <b>01 / Password security</b>
+
+        <p>
+            Passwords are stored as salted scrypt hashes,
+            never plain text.
+        </p>
+    </article>
+
+    <article>
+        <b>02 / Safer database</b>
+
+        <p>
+            Parameterized SQL statements help prevent
+            SQL injection.
+        </p>
+    </article>
+
+    <article>
+        <b>03 / Session protection</b>
+
+        <p>
+            HttpOnly and SameSite cookies, session renewal
+            and CSRF tokens.
+        </p>
+    </article>
+
+</section>
+
+{% endblock %}
